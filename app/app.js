@@ -1,3 +1,5 @@
+import { SmoothingModes } from './smoothing.js';
+
 const Application = function () {
   this.initA4();
   this.tuner = new Tuner(this.a4);
@@ -11,6 +13,9 @@ const Application = function () {
     value: 69,
     cents: 0,
   });
+
+  this.lastSmoothedCents = 0; // needle starts at 0
+  this.smoothingMode = 'springDamper'; // use spring-damper model
 };
 
 Application.prototype.initA4 = function () {
@@ -76,7 +81,16 @@ Application.prototype.updateFrequencyBars = function () {
 
 Application.prototype.update = function (note) {
   this.notes.update(note);
-  this.meter.update((note.cents / 50) * 45);
+
+  // Use the spring-damper smoother
+  this.lastSmoothedCents = SmoothingModes[this.smoothingMode](
+    note.cents,
+    this.lastSmoothedCents,
+    { stiffness: 0.2, damping: 0.7 } // you can experiment with these later
+  );
+
+  const deg = (this.lastSmoothedCents / 50) * 45;
+  this.meter.update(deg);
 };
 
 const app = new Application();
