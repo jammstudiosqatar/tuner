@@ -26,12 +26,18 @@
       Auto
       <input type="checkbox" checked />
     </label>
+
+    <!-- dialogs & aubio -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://cdn.jsdelivr.net/npm/aubiojs@0.1.1/build/aubio.min.js"></script>
+
+    <!-- core scripts -->
     <script src="tuner.js"></script>
     <script src="meter.js"></script>
     <script src="frequency-bars.js"></script>
     <script src="notes.js"></script>
-    <script src="app.js"></script>
+
+    <!-- our module-based app (with smoothing) -->
+    <script type="module" src="app.js"></script>
   </body>
 </html>
