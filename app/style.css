@@ -94,7 +94,7 @@ body {
 .meter-pointer {
   width: 2px;
   height: 100%;
-  background: #2c3e50;
+  background: #FF196D;
   transform: rotate(45deg);
   transform-origin: bottom;
   transition: transform 0.5s;
@@ -155,7 +155,7 @@ body {
 }
 
 .a4 span {
-  color: #e74c3c;
+  color: #FF196D;
 }
 
 .auto {
