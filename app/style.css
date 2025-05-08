@@ -33,7 +33,7 @@ body {
 }
 
 .note.active {
-  color: #e74c3c;
+  color: #FF196D;
 }
 
 .notes-list {
@@ -145,7 +145,7 @@ body {
 }
 
 .swal-button {
-  background: #2c3e50;
+  background: #FF196D;
 }
 
 .a4 {
@@ -155,7 +155,7 @@ body {
 }
 
 .a4 span {
-  color: #e74c3c;
+  color: #FF196D;
 }
 
 .auto {
